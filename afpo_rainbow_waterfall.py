@@ -1,15 +1,17 @@
 from glob import glob
 import matplotlib.pyplot as plt
 
-RUN = 100  # only plot the ecological dynamics within this single run
+"""
+This script assumes stats are saved for every evaluated individual in generation X in a file called "Gen_X.txt"
+"""
+
 GENS = 1000  # stop at this generation
 FIT_COL = 5  # which column is fitness stored (first column is zero)?
 AGE_COL = 7  # which column is age stored?
-DPI = 300  # dots per inch
-EXP_NAME = "ludobots"  # the dir name
+RUN_DIR = "/home/mecl/ludobots/run_50/"  # dir holding the generational data files
 
-run_directory = "/home/mecl/{0}/run_{1}/".format(EXP_NAME, RUN)  # dir holding one data file per generation
-all_of_gen_files = glob(run_directory + "allIndividualsData/Gen_*.txt")  # each row is an individual (before selection)
+# get all the data files and sort them from generation 1 to GENS
+all_of_gen_files = glob(RUN_DIR + "Gen_*.txt")  # each row is an individual
 sorted_all_of_gen_files = sorted(all_of_gen_files, reverse=False)
 
 line_hist = []
@@ -51,4 +53,4 @@ fig, ax = plt.subplots(1, 1, figsize=(4, 3))
 for line in line_hist:
     ax.plot(range(len(line)), line, linewidth=0.8)
 
-plt.savefig("plots/PlotName.png", dpi=DPI)
+plt.savefig("plots/PlotName.png", dpi=300)
