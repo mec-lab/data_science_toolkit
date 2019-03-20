@@ -2,11 +2,23 @@ from glob import glob
 import matplotlib.pyplot as plt
 
 """
-The Rainbow Waterfall Plot:
+
+What is AFPO?
+In the optimization algorithm AFPO (Age-Fitness Pareto Optimization), randomly generated candidate designs (solutions) 
+are injected into the population each generation with age zero. Every generation, modified copies are made of each 
+design in the population, and the age of each design (both the originals and the mutated copies) are incremented by one. 
+Next, selection reduces the population to some pre-specified size (deletes the worst designs) using the concept of 
+Pareto dominance and the two objectives of fitness (maximized) and age (minimized). 
+
+
+What is the Rainbow Waterfall plot?
 Each generation, the most fit individual from each age-level is connected to the most fit individual in the 
 one-generation-younger age-level from the previous generation.
 
-This script assumes stats are saved for every evaluated individual in generation X in a file called "Gen_X.txt"
+
+What stuff is required to run this script?
+This script assumes stats are saved for every evaluated individual in generation X in a file called "Gen_X.txt".
+
 """
 
 GENS = 1000  # stop at this generation
