@@ -2,6 +2,10 @@ from glob import glob
 import matplotlib.pyplot as plt
 
 """
+The Rainbow Waterfall Plot:
+Each generation, the most fit individual from each age-level is connected to the most fit individual in the 
+one-generation-younger age-level from the previous generation.
+
 This script assumes stats are saved for every evaluated individual in generation X in a file called "Gen_X.txt"
 """
 
