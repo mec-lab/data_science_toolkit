@@ -52,7 +52,7 @@ for gen in range(GENS+1):
 
         for age in gen_age_fit_dict[gen-1]:
 
-            if age+1 not in gen_age_fit_dict[gen] or gen == 1000:  # extinction
+            if age+1 not in gen_age_fit_dict[gen] or gen == GENS:  # extinction
 
                 this_line = []
                 n = 0
