@@ -12,8 +12,13 @@ Pareto dominance and the two objectives of fitness (maximized) and age (minimize
 
 
 What is the Rainbow Waterfall plot?
-Each generation, the most fit individual from each age-level is connected to the most fit individual in the 
-one-generation-younger age-level from the previous generation.
+Each generation, the most fit candidate design with age N is connected to the most fit design in the the previous 
+generation with age N-1, for all N in the set of ages (of the designs) present in the current population.
+
+
+What does the Rainbow Waterfall tell us?
+It indicates whether optimization has prematurely converged or if, instead, fitness is continuing to improve. It
+shows the dynamics of the two objectives of age and fitness and how they affect the discovery of novel and fit designs.
 
 
 What stuff is required to run this script?
@@ -28,7 +33,7 @@ RUN_DIR = "/home/mecl/ludobots/run_50/"  # dir holding the generational data fil
 
 # get all the data files and sort them from generation 1 to GENS
 all_of_gen_files = glob(RUN_DIR + "Gen_*.txt")  # each row is an individual
-sorted_all_of_gen_files = sorted(all_of_gen_files, reverse=False)
+sorted_all_of_gen_files = sorted(all_of_gen_files)
 
 line_hist = []
 gen_age_fit_dict = {}
