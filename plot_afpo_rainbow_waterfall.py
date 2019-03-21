@@ -50,7 +50,7 @@ for gen in range(GENS+1):
             this_fit = float(line.split()[FIT_COL])
             this_age = int(line.split()[AGE_COL])
 
-            if this_age not in gen_age_fit_dict[gen] or this_fit > gen_age_fit_dict[gen][this_age]:  # ord by fit anyway
+            if this_age not in gen_age_fit_dict[gen] or this_fit > gen_age_fit_dict[gen][this_age]:
                 gen_age_fit_dict[gen][this_age] = this_fit  # most fit at each age level
 
     if gen > 0:
